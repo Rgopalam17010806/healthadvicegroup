@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Air Quality{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}
+
+{% block content %}
+    <h1>Welcome to the Air Quality Dashboard</h1>
+
+    <form id="location-form">
+        <input type="text" id="location" placeholder="Enter your location" required>
+        <button type="submit">Check Air Quality</button>
+    </form>
+
+
+    <!-- Air Quality Display -->
+    <div id="aqi-display">
+        <div class="aqi-segment" id="unhealthy">Unhealthy</div>
+        <div class="aqi-segment" id="moderate">Moderate</div>
+        <div class="aqi-segment" id="healthy">Healthy</div>
+        <div id="indicator"></div>
+    </div>
+
+    <canvas id="pollutant-chart" width="400" height="200"></canvas>
+
+    <p id="recommendation"></p>
+
+    <script src="{{ url_for('static', filename='airquality.js') }}"></script>
+{% endblock %}

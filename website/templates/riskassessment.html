@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}Risk Assessment{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='main.css')}}" crossorigin="anonymous"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<div class="rectangle">
+    <div class="container mt-3">
+        <form method="POST" action="/riskassessment">
+            <div class="mb-3">
+                <label class="form-label">Do you have working smoke alarms installed on every level of your home and near sleeping areas?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="smoke_alarms" id="smokeAlarmsYes" value="yes">
+                    <label class="form-check-label" for="smokeAlarmsYes">Yes</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="smoke_alarms" id="smokeAlarmsNo" value="no">
+                    <label class="form-check-label" for="smokeAlarmsNo">No</label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Are all electrical cords and appliances in good condition, without fraying or exposed wires?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="electrical_cords" id="electricalCordsYes" value="yes">
+                    <label class="form-check-label" for="electricalCordsYes">Yes</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="electrical_cords" id="electricalCordsNo" value="no">
+                    <label class="form-check-label" for="electricalCordsNo">No</label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Have you secured heavy furniture and appliances to prevent them from tipping over, especially in areas accessible to children?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="furniture_secured" id="furnitureSecuredYes" value="yes">
+                    <label class="form-check-label" for="furnitureSecuredYes">Yes</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="furniture_secured" id="furnitureSecuredNo" value="no">
+                    <label class="form-check-label" for="furnitureSecuredNo">No</label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Do you have an emergency plan in place, including designated meeting spots and a list of emergency contacts?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="emergency_plan" id="emergencyPlanYes" value="yes">
+                    <label class="form-check-label" for="emergencyPlanYes">Yes</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="emergency_plan" id="emergencyPlanNo" value="no">
+                    <label class="form-check-label" for="emergencyPlanNo">No</label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Are all doors and windows properly locked, and do you have functional deadbolts and security systems?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="security_measures" id="securityMeasuresYes" value="yes">
+                    <label class="form-check-label" for="securityMeasuresYes">Yes</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="security_measures" id="securityMeasuresNo" value="no">
+                    <label class="form-check-label" for="securityMeasuresNo">No</label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        
+</div>
+
+{% endblock %}

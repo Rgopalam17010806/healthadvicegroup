@@ -1,0 +1,298 @@
+.carouselslide {
+    height: 500px; /* Set a fixed height for the carousel */
+    width: 100%; /* Adjust the width */
+    margin: 0 auto; /* Center the carousel horizontally */
+}
+
+.carouselslide .carousel-inner .carousel-item img {
+    height: 500px; /* Set a fixed height for the images */
+    width: 100%;
+    object-fit: cover; /* Ensures the image covers the entire height and width without distortion */
+}
+
+/* Hide the scrollbar */
+body {
+    overflow: hidden;
+}
+
+/* Footer styles */
+.bottom-rectangle {
+    background-color: #BBF3A0;
+    padding: 160px;
+    text-align: center;
+    border-top: 2px solid #BBF3A0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures the rectangle is above other content */
+}
+
+/* General button styles */
+.bottom-rectangle a {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Specific button styles */
+.bottom-rectangle a.book-button1 {
+    background-color: #007bff; /* Blue background */
+}
+
+.bottom-rectangle a.book-button2 {
+    background-color: #17a2b8; /* Cyan background */
+}
+
+.bottom-rectangle a.book-button3 {
+    background-color: #ffc107; /* Yellow background */
+}
+
+.bottom-rectangle a.book-button4 {
+    background-color: #dc3545; /* Red background for Login button */
+}
+
+.bottom-rectangle a.book-button5 {
+    background-color: #28a745; /* Green background for Sign Up button */
+}
+
+/* Hover effect */
+.bottom-rectangle a:hover {
+    background-color: #0056b3; /* Darker blue for hover effect */
+    color: #fff;
+} /* White text on hover */
+
+/* Login page styles */
+.rectangle {
+    border-radius: 25px;
+    height: 500px;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    background-color: rgba(152, 251, 152, .5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.rectangle-login h1,
+.rectangle-login label,
+.rectangle-login input,
+.rectangle-login button {
+    color: black;
+}
+
+/* Sign up page styles */
+.rectangle {
+    border-radius: 25px;
+    height: 600px;
+    width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    background-color: rgba(152, 251, 152, .5);
+}
+
+.rectangle-signup h1,
+.rectangle label,
+.rectangle input,
+.rectangle button {
+    color: black;
+}
+
+.btn-primary {
+    background-color: #a0522d; /* Brown color */
+    border: 1px solid #a0522d; /* Matching border color */
+    color: white; /* White text color */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Ensures spacing between form groups */
+}
+
+.registerModal {
+    width: 200px;
+}
+
+/* Input box styles */
+.form-group {
+    width: 100%; 
+    margin: 20px 0; 
+}
+
+.form-group input {
+    width: 200%;
+    height: 40px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.flashes {
+    list-style-type: none;
+    padding: 0;
+}
+
+.flashes li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.flashes .success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.flashes .error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.h5 {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
+    background-color: rgba(255,255,255,0.5);
+    padding: 10px;
+}
+
+.h5 {
+    position: absolute;
+    bottom: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
+    background-color: rgba(255,255,255,0.5);
+    padding: 10px;
+}
+
+.h5 {
+    position: absolute;
+    bottom: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
+    background-color: rgba(255,255,255,0.5);
+    padding: 10px;
+}
+
+/* Air Quality Dashboard */
+h1 {
+    color: #333;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+#location {
+    padding: 10px;
+    font-size: 1em;
+    width: 200px;
+}
+
+button {
+    padding: 10px;
+    font-size: 1em;
+}
+
+#aqi-display {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    margin: 20px 0;
+    border: 1px solid #000; /* Add border to segments */
+}
+
+.aqi-segment {
+    flex: 1; /* Ensure segments are of equal width */
+    text-align: center;
+}
+
+#unhealthy {
+    background-color: #ff4c4c;
+}
+
+#moderate {
+    background-color: #ffc04c;
+}
+
+#healthy {
+    background-color: #4cff4c;
+}
+
+#indicator {
+    position: absolute;
+    top: -25px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 20px solid black; /* Arrow pointing down */
+    transition: left 0.5s, border-top-color 0.5s; /* Smooth transition */
+}
+
+canvas {
+    margin: 20px 0;
+}
+
+#recommendation {
+    font-size: 1.2em;
+    color: #d9534f;
+}
+
+.form-check-input {
+    width: 0px;
+    height: 0px;
+}
+
+.date-time-display {
+    position: absolute;
+    top: 150px;
+    left: 250px;
+    font-family: 'Arial', sans-serif; /* Choose a font family */
+    font-size: 16px; /* Set font size */
+    color: black; /* Set text color */
+    background-color:  rgba(152, 251, 152, .5); /* Set background color with transparency */
+    padding: 5px 10px; /* Add padding */
+    border-radius: 5px;;
+}
+
+.rectangle-2 {
+    border-radius: 30px;
+    position: absolute;
+    top: 230px;
+    left: 1350px;
+    font-family: 'Arial', sans-serif; /* Choose a font family */
+    font-size: 16px; /* Set font size */
+    color: black; /* Set text color */
+    background-color: rgba(152, 251, 152, .5); /* Set background color with transparency */
+    padding: 5px 10px; /* Add padding */
+    border-radius: 5px; /* Add border radius */
+    width: 300px; /* Set width */
+    height: 400px; /* Set height */
+}
+
+.rectangle-3 {
+    border-radius: 30px;
+    position: absolute;
+    top: 230px;
+    left: 240px;
+    font-family: 'Arial', sans-serif; /* Choose a font family */
+    font-size: 16px; /* Set font size */
+    color: black; /* Set text color */
+    background-color: rgba(152, 251, 152, .5); /* Set background color with transparency */
+    padding: 5px 10px; /* Add padding */
+    border-radius: 5px; /* Add border radius */
+    width: 300px; /* Set width */
+    height: 400px; /* Set height */
+}

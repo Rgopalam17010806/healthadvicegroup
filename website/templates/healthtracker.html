@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}MyHealth{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+<script src="{{ url_for('static', filename='healthtracker.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="rectangle">
+    <div id="dateTimeDisplay" class="date-time-display"></div>
+    <form method="POST" action="{{ url_for('views.submit_health_data') }}">
+        <input type="hidden" id="date" name="date" required>
+        <input type="hidden" id="time" name="time" required>
+        <div class="mb-3">
+            <label for="steps" class="form-label">Step Count:</label>
+            <input type="number" class="form-control" id="steps" name="steps" placeholder="Enter your step count" required>
+        </div>
+        <div class="mb-3">
+            <label for="sleep" class="form-label">Hours of Sleep:</label>
+            <input type="number" step="0.1" class="form-control" id="sleep" name="sleep" placeholder="Enter your hours of sleep" required>
+        </div>
+        <div class="mb-3">
+            <label for="calories" class="form-label">Calories Burned:</label>
+            <input type="number" class="form-control" id="calories" name="calories" placeholder="Enter your calories burned" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <div class="rectangle-2">
+        {% for health in health_data %}
+            <p>steps: {{ health.step_count }} </p>
+            <p>Sleep Hours: {{ health.sleep_count }}</p>
+            <p>Calories: {{ health.calories_burned }}</p>
+        {% endfor %}   
+    </div>
+
+    <div class="rectangle-3">
+        <p id="userNameDisplay">{{ first_name }} {{ last_name }}
+    </div>
+</div>
+{% endblock %}

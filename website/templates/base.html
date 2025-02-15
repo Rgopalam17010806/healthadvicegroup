@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Health Advice Group{% endblock %}</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- Link to the custom CSS file -->
+    <link href="{{ url_for('static', filename='/main.css') }}" rel="stylesheet">
+
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <header>
+        <!-- Bootstrap Navbar -->
+        <nav class="navbar navbar-expand-lg" style="background-color: #A7E1E1;">
+            <a class="navbar-brand" href="{{url_for('views.home')}}">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto">
+                    <!-- Home -->
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{url_for('views.home')}}">Home</a>
+                    </li>
+                    <!-- Weather Forecasting -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('views.weather')}}">Weather Forecasting</a>
+                    </li>
+
+                    {% if current_user.is_authenticated %}
+                        <!-- Air Quality -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url_for('views.airquality')}}">Air Quality</a>
+                        </li>
+                        <!-- Risk Assessment -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url_for('views.riskassessment')}}">Risk Assessment</a>
+                        </li>
+                        <!-- MyHealth -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url_for('views.healthtracker')}}">MyHealth</a>
+                        </li>
+                        <!-- Logout -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url_for('auth.logout')}}">Logout</a>
+                        </li>
+                    {% else %}
+                        <!-- Login -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url_for('auth.login')}}">Login</a>
+                        </li>
+                    
+                        <!-- Sign up -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url_for('auth.signup')}}">Sign up</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+    <!-- Bootstrap 5 JavaScript Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
